@@ -15,10 +15,10 @@ before_install:
   - gcloud config set compute/zone asia-south1-a
   - gcloud container clusters get-credentials multi-cluster 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker build -t desmond/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t desmonddocid/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true desmond/docker-react npm run test
+  - docker run -e CI=true desmonddocid/docker-react npm run test
 
 deploy:
   provider: script
