@@ -1,6 +1,6 @@
 docker build -t desmonddocid/multi-client:latest -t desmonddocid/multi-client:$SHA -f ./client/Dockerfile ./client
-docker build -t desmonddocid/multi-server:latest -t desmonddocid/multi-server:$SHA -f ./client/Dockerfile ./server
-docker build -t desmonddocid/multi-worker:latest -t desmonddocid/multi-worker:$SHA -f ./client/Dockerfile ./worker
+docker build -t desmonddocid/multi-server:latest -t desmonddocid/multi-server:$SHA -f ./server/Dockerfile ./server
+docker build -t desmonddocid/multi-worker:latest -t desmonddocid/multi-worker:$SHA -f ./worker/Dockerfile ./worker
 
 docker push desmonddocid/multi-client:latest
 docker push desmonddocid/multi-server:latest
