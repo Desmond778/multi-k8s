@@ -16,9 +16,10 @@ before_install:
   - gcloud container clusters get-credentials multi-cluster 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t desmonddocid/react-test -f ./client/Dockerfile.dev ./client
+  
 
 script:
-  - docker run -e CI=true desmonddocid/docker-react npm run test
+  - docker run -e CI=true desmonddocid/react-test npm run test
 
 deploy:
   provider: script
